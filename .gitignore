@@ -4,6 +4,7 @@
 **/.terragrunt-cache
 *.terraform.lock.hcl
 terragrunt-debug.*
+function.zip
 
 
 

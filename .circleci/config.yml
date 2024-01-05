@@ -11,7 +11,7 @@ jobs:
           command: "python -m unittest discover -v ./python"
   deploy:
     docker:
-      - image: docker pull realalknowles/assessment:v1
+      - image: realalknowles/assessment:v1
     steps:
       - checkout
       - run:

@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: "Verify"
-          command: "echo only verifying"
+          command: "echo verifying"
   deploy:
     docker:
       - image: alpine/terragrunt:1.6.6

@@ -24,6 +24,27 @@ jobs:
           command: | 
             cd ./terragrunt/assessment
             terragrunt apply --terragrunt-non-interactive -auto-approve
+      - run:
+          name: "Deploy Code Changes"
+          command: | 
+            zip -r -j ./function.zip ./python/*
+            aws lambda update-function-code --function-name assessment-function --zip-file fileb://./function.zip
+  test:
+    docker:
+      - image: realalknowles/assessment:v3
+    steps:
+      - run:
+          name: "Test Function"
+          command: |
+            response_code=$(curl -s -o /dev/null -w "%{http_code}" https://assessment.realalknowles.com)
+            if [ "$response_code" = "200" ]
+            then
+              echo "Deployment succeeded"
+              exit 0
+            fi
+            
+            echo "Deployment failed - response code was ${response_code}"
+            exit 1
 
 workflows:
   verify-and-deploy:
@@ -36,3 +57,6 @@ workflows:
                 - main
           requires:
             - verify
+      - test:
+          requires:
+            - deploy

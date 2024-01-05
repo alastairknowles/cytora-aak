@@ -9,7 +9,7 @@ jobs:
       - run:
           name: "Verify"
           command: "echo verifying"
-      - understand-path:
+      - run:
           name: "Understand path"
           command: "pwd && ls -al"
   deploy:

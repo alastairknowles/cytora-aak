@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   verify:
     docker:
-      - image: realalknowles/assessment:v1
+      - image: realalknowles/assessment:v2
     steps:
       - checkout
       - run:
@@ -11,10 +11,10 @@ jobs:
           command: "python -m unittest discover -v ./python"
       - run:
           name: "Verify Infrastructure Changes"
-          command: "which terraform && which terragrunt"
+          command: "cd ./terragrunt/assessment && terragrunt init --terragrunt-non-interactive"
   deploy:
     docker:
-      - image: realalknowles/assessment:v1
+      - image: realalknowles/assessment:v2
     steps:
       - checkout
       - run:

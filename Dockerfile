@@ -10,5 +10,5 @@ RUN sudo apt update \
     && chmod +x /usr/local/bin/terraform \
     && rm terraform_1.6.6_darwin_amd64.zip \
     && wget https://github.com/gruntwork-io/terragrunt/releases/download/v0.54.12/terragrunt_darwin_amd64 \
-    && sudo mv terragrunt_darwin_amd64 /usr/local/bin/ \
-    && chmod +x /usr/local/bin/terragrunt_darwin_amd64
+    && sudo mv terragrunt_darwin_amd64 /usr/local/bin/terragrunt \
+    && chmod +x /usr/local/bin/terragrunt

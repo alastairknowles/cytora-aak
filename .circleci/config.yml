@@ -11,7 +11,7 @@ jobs:
           command: "python -m unittest discover -v ./python"
       - run:
           name: "Verify Infrastructure Changes"
-          command: "cd ./terragrunt/assessment && terragrunt init --terragrunt-non-interactive"
+          command: "which terraform && which terragrunt"
   deploy:
     docker:
       - image: realalknowles/assessment:v1

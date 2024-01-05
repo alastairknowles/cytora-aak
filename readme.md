@@ -6,4 +6,8 @@ Deploys a basic lambda function with the capability to update infrastructure and
 
 ### CI/CD
 
-Deployment pipeline runs on merge to master. Feature branches verify that infrastructure changes are valid.
+Deployment pipeline runs on merge to main. Feature branches verify that infrastructure changes are valid.
+
+### CircleCi
+
+A custom docker image was created to simplify creating the pipeline in CircleCI.

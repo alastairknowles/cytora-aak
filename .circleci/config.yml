@@ -8,10 +8,13 @@ jobs:
       - checkout
       - run:
           name: "Verify Code Changes"
-          command: "python -m unittest discover -v ./python"
+          command: python -m unittest discover -v ./python
       - run:
           name: "Verify Infrastructure Changes"
-          command: "cd ./terragrunt/assessment && terragrunt init --terragrunt-non-interactive"
+          command: | 
+            cd ./terragrunt/assessment
+            terragrunt init --terragrunt-non-interactive
+            terragrunt plan --terragrunt-non-interactive
   deploy:
     docker:
       - image: realalknowles/assessment:v3
@@ -19,7 +22,7 @@ jobs:
       - checkout
       - run:
           name: "Deploy"
-          command: "echo deploying"
+          command: echo "deploying"
 
 workflows:
   verify-and-deploy:

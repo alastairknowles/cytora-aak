@@ -10,7 +10,6 @@ jobs:
           name: "Verify Infrastructure Changes"
           command: | 
             cd ./terragrunt/assessment
-            terragrunt init --terragrunt-non-interactive
             terragrunt plan --terragrunt-non-interactive
       - run:
           name: "Verify Code Changes"

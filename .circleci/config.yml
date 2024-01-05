@@ -31,7 +31,7 @@ jobs:
             aws lambda update-function-code --function-name assessment-function --zip-file fileb://./function.zip
   test:
     docker:
-      - image: realalknowles/assessment:v3
+      - image: realalknowles/assessment:v4
     steps:
       - run:
           name: "Test Deployment"

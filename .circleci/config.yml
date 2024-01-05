@@ -6,7 +6,6 @@ jobs:
       - image: realalknowles/assessment:v1
     steps:
       - checkout
-      - aws-cli/setup
       - run:
           name: "Verify Code Changes"
           command: "python -m unittest discover -v ./python"

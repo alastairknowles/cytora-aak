@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   verify:
     docker:
-      - image: realalknowles/assessment:v3
+      - image: realalknowles/assessment:v4
     steps:
       - checkout
       - run:
@@ -16,7 +16,7 @@ jobs:
           command: python -m unittest discover -v ./python
   deploy:
     docker:
-      - image: realalknowles/assessment:v3
+      - image: realalknowles/assessment:v4
     steps:
       - checkout
       - run:
@@ -26,8 +26,7 @@ jobs:
             terragrunt apply --terragrunt-non-interactive -auto-approve
       - run:
           name: "Deploy Code Changes"
-          command: | 
-            awsv2 sts get-caller-identity
+          command: |
             zip -r -j ./function.zip ./python/*
             awsv2 lambda update-function-code --function-name assessment-function --zip-file fileb://./function.zip
   test:

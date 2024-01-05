@@ -9,6 +9,9 @@ jobs:
       - run:
           name: "Verify"
           command: "echo verifying"
+      - understand-path:
+          name: "Understand path"
+          command: "pwd && ls -al"
   deploy:
     docker:
       - image: alpine/terragrunt:1.6.6

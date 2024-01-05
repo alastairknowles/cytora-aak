@@ -9,7 +9,7 @@ jobs:
       - image: alpine/terragrunt:1.6.6
     steps:
       - checkout
-      - aws-cli/setup
+      - aws-cli/install
       - run:
           name: "Verify Code Changes"
           command: "python -m unittest discover -v ./python"

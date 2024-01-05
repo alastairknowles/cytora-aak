@@ -19,7 +19,7 @@ jobs:
           command: "echo deploying"
 
 workflows:
-  say-hello-workflow:
+  verify-and-deploy:
     jobs:
       - verify
       - deploy:

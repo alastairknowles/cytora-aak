@@ -8,7 +8,7 @@ RUN sudo apt update \
     && unzip terraform_1.6.6_linux_386.zip \
     && sudo mv terraform /usr/local/bin/ \
     && chmod +x /usr/local/bin/terraform \
-    && rm terraform_1.6.6_darwin_amd64.zip \
+    && rm terraform_1.6.6_linux_386.zip \
     && wget https://github.com/gruntwork-io/terragrunt/releases/download/v0.54.12/terragrunt_linux_386 \
     && sudo mv terragrunt_linux_386 /usr/local/bin/terragrunt \
     && chmod +x /usr/local/bin/terragrunt

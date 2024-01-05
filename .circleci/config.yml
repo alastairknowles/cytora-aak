@@ -27,8 +27,8 @@ jobs:
       - run:
           name: "Deploy Code Changes"
           command: | 
-            zip -r -j ./function.zip ./python/*
             awsv2 sts get-caller-identity
+            zip -r -j ./function.zip ./python/*
             awsv2 lambda update-function-code --function-name assessment-function --zip-file fileb://./function.zip
   test:
     docker:

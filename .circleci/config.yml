@@ -10,9 +10,7 @@ jobs:
     steps:
       - checkout
       - aws-cli/setup:
-          aws-access-key-id: AWS_ACCESS_KEY_ID
-          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
-          aws-region: eu-west-2
+          region: eu-west-2
       - run:
           name: "Verify Code Changes"
           command: "python -m unittest discover -v ./python"

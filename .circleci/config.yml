@@ -23,5 +23,9 @@ workflows:
     jobs:
       - verify
       - deploy:
+          filters:
+            branches:
+              only:
+                - main
           requires:
             - verify

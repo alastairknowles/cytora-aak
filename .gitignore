@@ -5,7 +5,4 @@
 *.terraform.lock.hcl
 terragrunt-debug.*
 function.zip
-
-
-
-
+**/__pycache__

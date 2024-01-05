@@ -28,7 +28,7 @@ jobs:
           name: "Deploy Code Changes"
           command: |
             zip -r -j ./function.zip ./python/*
-            awsv2 lambda update-function-code --function-name assessment-function --zip-file fileb://./function.zip
+            aws lambda update-function-code --function-name assessment-function --zip-file fileb://./function.zip
   test:
     docker:
       - image: realalknowles/assessment:v3

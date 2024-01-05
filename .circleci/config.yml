@@ -34,7 +34,7 @@ jobs:
       - image: realalknowles/assessment:v3
     steps:
       - run:
-          name: "Test Function"
+          name: "Test Deployment"
           command: |
             response_code=$(curl -s -o /dev/null -w "%{http_code}" https://assessment.realalknowles.com)
             if [ "$response_code" = "200" ]

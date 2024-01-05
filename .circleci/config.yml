@@ -6,7 +6,7 @@ orbs:
 jobs:
   verify:
     docker:
-      - image: alpine/terragrunt:1.1.0
+      - image: realalknowles/assessment:v1
     steps:
       - checkout
       - aws-cli/setup
@@ -15,7 +15,7 @@ jobs:
           command: "python -m unittest discover -v ./python"
   deploy:
     docker:
-      - image: alpine/terragrunt:1.1.0
+      - image: docker pull realalknowles/assessment:v1
     steps:
       - checkout
       - run:
